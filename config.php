@@ -87,8 +87,19 @@ return [
             'class' => \Luolongfei\Libs\MessageServices\Bark::class,
             'name' => lang('100068'),
         ],
+
+        /**
+         * Pushplus
+         */
+        'pushplus' => [
+            'pushplus_key' => env('PUSHPLUS_KEY'), // SendKey
+            'enable' => (int)env('PUSHPLUS_ENABLE'), // 是否启用，默认不启用
+            'not_enabled_tips' => (bool)env('PUSHPLUS_KEY'), // 提醒未启用
+            'class' => \Luolongfei\Libs\MessageServices\Pushplus::class,
+            'name' => lang('100136'),
+        ],
     ],
-    'language' => env('LANGUAGE', 'zh'),
+    'custom_language' => env('CUSTOM_LANGUAGE', 'zh'),
     'notice_freq' => (int)env('NOTICE_FREQ', 1), // 通知频率 0：仅当有续期操作的时候 1：每次执行
     'verify_ssl' => (bool)env('VERIFY_SSL', 0), // 请求时验证 SSL 证书行为，默认不验证，防止服务器证书过期或证书颁布者信息不全导致无法发出请求
     'debug' => (bool)env('DEBUG'),
